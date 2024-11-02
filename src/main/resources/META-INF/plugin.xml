@@ -1,0 +1,47 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>sandipchitale.jb-pathtools</id>
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+    <name>Jb-pathtools</name>
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor email="sandipchitale@gmail.com" url="https://github.com/sandipchitale/jb-pathtools">Sandip Chitale</vendor>
+
+
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+    <description><![CDATA[
+    This plugin provides Path Tools for IntelliJ IDEA. It provides actions to copy paths, open paths in OS file explorer, open path directory in external terminal.
+    ]]></description>
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+    <extensions defaultExtensionNs="com.intellij">
+    </extensions>
+
+    <actions>
+        <group id="sandipchitale.PathTools" text="Path Tools" description="Path related actions">
+            <add-to-group group-id="MainMenu" anchor="before" relative-to-action="HelpMenu"/>
+        </group>
+        <action id="sandipchitale.jb-pathtools.ExplorePathAction"
+                class="sandipchitale.jbpathtools.ExplorePathAction"
+                text="Explore Path"
+                description="Explore Path using the Desktop file manager.">
+            <add-to-group group-id="sandipchitale.PathTools" anchor="first"/>
+        </action>
+        <action id="sandipchitale.jb-pathtools.ExternalShellAction"
+                class="sandipchitale.jbpathtools.ExternalShellAction"
+                text="External Shell"
+                description="Open external shell.">
+            <add-to-group group-id="sandipchitale.PathTools" anchor="after" relative-to-action="sandipchitale.jb-pathtools.ExplorePathAction"/>
+        </action>
+    </actions>
+</idea-plugin>
