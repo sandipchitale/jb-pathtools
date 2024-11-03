@@ -7,7 +7,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 
-public class ExternalShellAction extends AnAction {
+public class ExternalTerminalAction extends AnAction {
     @Override
     public void actionPerformed(@NotNull AnActionEvent e) {
         VirtualFile virtualFile = null;
