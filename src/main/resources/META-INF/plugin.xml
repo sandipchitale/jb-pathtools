@@ -25,23 +25,26 @@
     <!-- Extension points defined by the plugin.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
+        <selectInTarget implementation="sandipchitale.jbpathtools.OpenInExternalTerminal"
+                            id="sandipchitale.jb-pathtools.OpenInExternalTerminal"/>
     </extensions>
 
     <actions>
-        <group id="sandipchitale.PathTools" text="Path Tools" description="Path related actions">
-            <add-to-group group-id="MainMenu" anchor="before" relative-to-action="HelpMenu"/>
-        </group>
-        <action id="sandipchitale.jb-pathtools.ExplorePathAction"
-                class="sandipchitale.jbpathtools.ExplorePathAction"
-                text="Explore Path"
-                description="Explore Path using the Desktop file manager.">
-            <add-to-group group-id="sandipchitale.PathTools" anchor="first"/>
-        </action>
+<!--        <group id="sandipchitale.PathTools" text="Path Tools" description="Path related actions" popup="true">-->
+<!--            <add-to-group group-id="ToolsBasicGroup" anchor="last"/>-->
+<!--        </group>-->
+<!--        <action id="sandipchitale.jb-pathtools.ExplorePathAction"-->
+<!--                class="sandipchitale.jbpathtools.ExplorePathAction"-->
+<!--                text="Explore Path"-->
+<!--                description="Explore Path using the Desktop file manager.">-->
+<!--            <add-to-group group-id="sandipchitale.PathTools" anchor="first"/>-->
+<!--        </action>-->
         <action id="sandipchitale.jb-pathtools.ExternalShellAction"
                 class="sandipchitale.jbpathtools.ExternalShellAction"
-                text="External Shell"
-                description="Open external shell.">
-            <add-to-group group-id="sandipchitale.PathTools" anchor="after" relative-to-action="sandipchitale.jb-pathtools.ExplorePathAction"/>
+                text="External Terminal"
+                description="Open in external terminal.">
+            <add-to-group group-id="RevealGroup" anchor="last"/>
+<!--            <add-to-group group-id="sandipchitale.PathTools" anchor="after" relative-to-action="sandipchitale.jb-pathtools.ExplorePathAction"/>-->
         </action>
     </actions>
 </idea-plugin>
