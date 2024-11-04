@@ -33,6 +33,7 @@
         <action id="sandipchitale.jb-pathtools.ExternalTerminalAction"
                 class="sandipchitale.jbpathtools.ExternalTerminalAction"
                 text="External Terminal"
+                icon="com.intellij.icons.ExpUiIcons.FileTypes.Shell"
                 description="External terminal">
             <add-to-group group-id="RevealGroup" anchor="last"/>
         </action>
