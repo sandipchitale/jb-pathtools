@@ -25,8 +25,8 @@
     <!-- Extension points defined by the plugin.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
-        <selectInTarget implementation="sandipchitale.jbpathtools.SelectInExternalTerminal"
-                            id="sandipchitale.jb-pathtools.OpenInExternalTerminal"/>
+        <selectInTarget id="sandipchitale.jb-pathtools.SelectInExternalTerminal"
+                        implementation="sandipchitale.jbpathtools.SelectInExternalTerminal"/>
     </extensions>
 
     <actions>

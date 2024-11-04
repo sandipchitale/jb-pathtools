@@ -14,7 +14,7 @@ public class SelectInExternalTerminal implements SelectInTarget {
 
     @Override
     public void selectIn(SelectInContext context, boolean requestFocus) {
-        ExternalTerminalService.externalTerminal(new File(Objects.requireNonNull(context.getVirtualFile().getCanonicalPath())));
+        ExternalTerminalService.externalTerminal(new File(Objects.requireNonNull(context.getVirtualFile().getPresentableUrl())));
     }
 
     @Override
