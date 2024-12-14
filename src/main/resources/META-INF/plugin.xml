@@ -25,8 +25,8 @@
     <change-notes><![CDATA[
 <h2>New Features</h2>
 <ul>
-    <li>Open in File Manager from Open in... popup menu</li>
-    <li>Open in File Manager from Select In popup</li>
+    <li>Open in File Manager from Open in... popup menu (On Linux only - standard action does not work reliably.)</li>
+    <li>Open in File Manager from Select In popup (On Linux only - standard action does not work reliably.)</li>
 </ul>
 
 <h2>Features</h2>
@@ -53,16 +53,16 @@
     <actions>
         <action id="sandipchitale.jb-pathtools.FileManagerAction"
                 class="sandipchitale.jbpathtools.FileManagerAction"
-                text="Open in File Manager"
+                text="File Manager"
                 icon="AllIcons.Actions.MenuOpen"
-                description="Open in file manager">
+                description="Open in OS file manager">
             <add-to-group group-id="RevealGroup" anchor="last"/>
         </action>
         <action id="sandipchitale.jb-pathtools.ExternalTerminalAction"
                 class="sandipchitale.jbpathtools.ExternalTerminalAction"
-                text="Open in External Terminal"
+                text="External Terminal"
                 icon="AllIcons.Actions.Run_anything"
-                description="External terminal">
+                description="Open in OS External terminal">
             <add-to-group group-id="RevealGroup" anchor="last"/>
         </action>
     </actions>

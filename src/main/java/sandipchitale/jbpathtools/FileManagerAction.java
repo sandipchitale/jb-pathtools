@@ -5,6 +5,7 @@ import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.openapi.editor.Editor;
+import com.intellij.openapi.util.SystemInfo;
 import com.intellij.openapi.vfs.VirtualFile;
 import org.jetbrains.annotations.NotNull;
 
@@ -24,6 +25,11 @@ public class FileManagerAction extends AnAction {
         if (virtualFile != null) {
             FileManagerService.fileManager(new File(virtualFile.getPath()));
         }
+    }
+
+    @Override
+    public void update(@NotNull AnActionEvent actionEvent) {
+        actionEvent.getPresentation().setEnabledAndVisible(SystemInfo.isLinux);
     }
 
     @Override

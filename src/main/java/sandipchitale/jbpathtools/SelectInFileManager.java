@@ -2,6 +2,7 @@ package sandipchitale.jbpathtools;
 
 import com.intellij.ide.SelectInContext;
 import com.intellij.ide.SelectInTarget;
+import com.intellij.openapi.util.SystemInfo;
 
 import java.io.File;
 import java.util.Objects;
@@ -9,7 +10,7 @@ import java.util.Objects;
 public class SelectInFileManager implements SelectInTarget {
     @Override
     public boolean canSelect(SelectInContext context) {
-        return context.getVirtualFile().isInLocalFileSystem();
+        return SystemInfo.isLinux && context.getVirtualFile().isInLocalFileSystem();
     }
 
     @Override
