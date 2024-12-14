@@ -6,7 +6,7 @@ import com.intellij.ide.SelectInTarget;
 import java.io.File;
 import java.util.Objects;
 
-public class SelectInExternalTerminal implements SelectInTarget {
+public class SelectInFileManager implements SelectInTarget {
     @Override
     public boolean canSelect(SelectInContext context) {
         return context.getVirtualFile().isInLocalFileSystem();
@@ -14,16 +14,16 @@ public class SelectInExternalTerminal implements SelectInTarget {
 
     @Override
     public void selectIn(SelectInContext context, boolean requestFocus) {
-        ExternalTerminalService.externalTerminal(new File(Objects.requireNonNull(context.getVirtualFile().getPresentableUrl())));
+        FileManagerService.fileManager(new File(Objects.requireNonNull(context.getVirtualFile().getPresentableUrl())));
     }
 
     @Override
     public float getWeight() {
-        return 1001;
+        return 1000;
     }
 
     @Override
     public String toString() {
-        return "External Terminal";
+        return "File Manager";
     }
 }

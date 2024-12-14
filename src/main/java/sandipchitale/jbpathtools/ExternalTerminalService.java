@@ -4,15 +4,15 @@ import java.io.File;
 
 class ExternalTerminalService {
     public static void externalTerminal(File file) {
-        // Get the configured explorer commands for folder and file
+        // Get the configured external terminal commands for folder and file
         if (file != null && file.exists()) {
-            String exploreCommand;
+            String externalTerminalCommand;
             if (file.isDirectory()) {
-                exploreCommand = PathToolsPreferences.getFolderShellCommand();
+                externalTerminalCommand = PathToolsPreferences.getFolderShellCommand();
             } else {
-                exploreCommand = PathToolsPreferences.getFileShellCommand();
+                externalTerminalCommand = PathToolsPreferences.getFileShellCommand();
             }
-            Utilities.launch(exploreCommand, file);
+            Utilities.launch(externalTerminalCommand, file);
         }
     }
 }

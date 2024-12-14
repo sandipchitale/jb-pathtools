@@ -25,12 +25,14 @@
     <change-notes><![CDATA[
 <h2>New Features</h2>
 <ul>
-    <li>Open in External Terminal from Open in... popup menu</li>
-    <li>Open in External Terminal from Select In popup</li>
+    <li>Open in File Manager from Open in... popup menu</li>
+    <li>Open in File Manager from Select In popup</li>
 </ul>
 
 <h2>Features</h2>
 <ul>
+    <li>Open in External Terminal from Open in... popup menu</li>
+    <li>Open in External Terminal from Select In popup</li>
 </ul>
 
 <h2>Known Issues</h2>
@@ -42,15 +44,24 @@
     <!-- Extension points defined by the plugin.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
+        <selectInTarget id="sandipchitale.jb-pathtools.SelectInFileManager"
+                        implementation="sandipchitale.jbpathtools.SelectInFileManager"/>
         <selectInTarget id="sandipchitale.jb-pathtools.SelectInExternalTerminal"
                         implementation="sandipchitale.jbpathtools.SelectInExternalTerminal"/>
     </extensions>
 
     <actions>
+        <action id="sandipchitale.jb-pathtools.FileManagerAction"
+                class="sandipchitale.jbpathtools.FileManagerAction"
+                text="Open in File Manager"
+                icon="AllIcons.Actions.MenuOpen"
+                description="Open in file manager">
+            <add-to-group group-id="RevealGroup" anchor="last"/>
+        </action>
         <action id="sandipchitale.jb-pathtools.ExternalTerminalAction"
                 class="sandipchitale.jbpathtools.ExternalTerminalAction"
-                text="External Terminal"
-                icon="com.intellij.icons.ExpUiIcons.FileTypes.Shell"
+                text="Open in External Terminal"
+                icon="AllIcons.Actions.Run_anything"
                 description="External terminal">
             <add-to-group group-id="RevealGroup" anchor="last"/>
         </action>
